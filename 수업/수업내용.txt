@@ -1,0 +1,11 @@
+vscode plug in :
+
+1.code runner
+2.liveserver
+
+node.js 설치
+
+
+/** 자동멀티라인 주석
+rmdir /s nodetest -> /s의 의미
+ 
