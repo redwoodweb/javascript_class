@@ -16,16 +16,16 @@
 
 // inner();
 
-//데이터 캐싱
-function cashfunction() {
-  //아주 오래 소요하는 작업
-  let number = 10 * 10;
-  function innerCashfunction(newNum){
-    return number * newNum;
-  }
-  return innerCashfunction;
-}
+// //데이터 캐싱
+// function cashfunction() {
+//   //아주 오래 소요하는 작업
+//   let number = 10 * 10;
+//   function innerCashfunction(newNum){
+//     return number * newNum;
+//   }
+//   return innerCashfunction;
+// }
 
-//오래소요되는 작업 실행하고 나머지 작업에 대한 것을 내부함수로 처리
-const runner = cashfunction();
-console.log(runner(30));
+// //오래소요되는 작업 실행하고 나머지 작업에 대한 것을 내부함수로 처리
+// const runner = cashfunction();
+// console.log(runner(30));

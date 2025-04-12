@@ -19,3 +19,15 @@ var func = new Function(1,2)
 // 클로저를 통해서 함수를 리턴
 // 부모 함수가 데이터량 또는 수행 코드가 많을 경우
 // 한번 실행후 내부 함수만 수행할 수있게 한다 데이터캐싱
+
+객체
+1. 사용자 정의 객체
+리터럴
+생성자 + prototype
+
+2.javascript 에서 제공하는 객체
+Array,Math,Number..
+
+3.browser object
+window, navigator, document...
+DOM
