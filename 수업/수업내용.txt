@@ -31,3 +31,10 @@ Array,Math,Number..
 3.browser object
 window, navigator, document...
 DOM
+
+
+
+git config --global user.name "dddd"
+git config --global user.email "dddd"
+
+git config --list
