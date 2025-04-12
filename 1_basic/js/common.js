@@ -13,7 +13,7 @@
 //const: 상수값으로 사용 (블록스코프)
 
 //데이터입(자료형)
-// string, number, object, boolean, undefinded
+// string, number, object, boolean, undefinded, function
 let intNum = 10;
 let floatNum = 3.14;
 let stringNum = '10';
@@ -61,3 +61,19 @@ console.log(!!null);
 console.log(!!{});//객체는 비어있어도 true
 console.log(!![]);//객체는 비어있어도 true
 
+//객체(object)
+let person = {
+  name: 'jane',
+  age: 30
+}
+
+console.log(typeof person);
+console.log(person.name);
+
+//함수(function)
+
+const funcNum = function(){
+  return 'this is function';
+}
+
+console.log(typeof funcNum);
