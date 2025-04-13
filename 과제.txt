@@ -1,0 +1,47 @@
+함수:
+익명함수
+let func = function(){]
+즉시실행함수
+(function(a,b){
+  console.log(a+b);
+})(2,3);
+화살표함수
+let greeing = (name) => {
+  return `hello ${name}`;
+}
+
+객체 
+리터럴 
+let obj = {
+	"name": "홍길동",
+	"age": 30,
+}
+
+함수형 객체
+function Func(name, age){
+	this.name = name;
+	this.age = age;
+}
+
+클래스형 객체
+class Shape {
+	constructor(width,height){
+		this.width = width;
+		this.height = height;
+	}
+}
+
+
+이벤트 핸들러 
+
+const btn =  document.querySelector("#btn")
+btn.onclick = function(){
+	console.log('click!!')
+}
+
+이벤트 리스너 사용
+btn.addEventListener('click',function(){ console.log('click!!')}, false);
+
+
+DOM 로드이후 DOM요소 컨트롤
+window.onload = function(){} 
