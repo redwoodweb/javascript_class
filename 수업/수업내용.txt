@@ -51,3 +51,7 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Ob
 하위에서 최상위 프로퍼티를 call 받아오고 
 
 
+부모클래스의 프로토타입을 가져올때는 별도 상속을 아래와 같이 해야함
+// FemaleIdoModel.prototype = Object.create(IdolModel.prototype);
+// FemaleIdoModel.prototype.constructor = FemaleIdoModel;
+
