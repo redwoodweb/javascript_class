@@ -14,12 +14,13 @@ window.onload = function(){
   //   }
   // });
 
-  const links = document.getElementsByTagName('a');
+  //다시 작성해보기
+  // const links = document.getElementsByTagName('a');
 
-  for (let i = 0; i < links.length; i++) {
-    links[i].addEventListner('click',function(e){
-      e.preventDefault();
-      showPic(this);
-    },false);
-  }
+  // for (let i = 0; i < links.length; i++) {
+  //   links[i].addEventListner('click',function(e){
+  //     e.preventDefault();
+  //     showPic(this);
+  //   },false);
+  // }
 }
