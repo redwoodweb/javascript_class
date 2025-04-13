@@ -68,3 +68,14 @@ console.log(testObj);
 // const funcObj1 = FuncObj();
 
 // funcObj1.func();
+
+
+//객체 디스트럭처링 : 객체 프로퍼티를 풀어서 별개의 변수에 저장하는 방식
+
+let person = {
+  first: '홍',
+  last: '길동'
+}
+
+let {first, last} = person;
+console.log(first,last);

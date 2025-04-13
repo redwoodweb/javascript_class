@@ -11,6 +11,8 @@ rmdir /s nodetest -> /s의 의미
 
 
 생성자 함수를 쓰는 이유?
+생성자함수 내부 함수 선언방식 
+중첩 함수 내부 함수 선언방식
 
 var func = new Function(1,2)
 
@@ -38,3 +40,14 @@ git config --global user.name "dddd"
 git config --global user.email "dddd"
 
 git config --list
+
+
+
+생성자함수 별도 메모리 -> prototype 이라고 한다.(알파룸) :  변화되는 데이터를 제외하고 메서드 함수를 저장
+
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+테스트 해보기
+상위 클래스에서 프로토타입생성
+하위에서 최상위 프로퍼티를 call 받아오고 
+
+
