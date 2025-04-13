@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event</title>
+  <script>
+    let count = 0;
+    function doProcess(){
+      count++;
+      document.querySelector("#result").innerHTML = `<span>${count}</span>`;
+    }
+
+    function doProcess2(){
+      alert('이벤트2');
+    }
+
+    window.onload = function(){
+      const btn = document.querySelector("#btn");
+      btn.onclick = () => {
+        doProcess2();
+      }
+    }
+    
+    </script>
+<body>
+  <div id="result"></div>
+  <input type="button" value="버튼1" onclick="doProcess()">
+  <input type="button" value="버튼2" id="btn">
+  <script>    
+      // const btn = document.querySelector("#btn");
+      // function doProcess2(){
+      //   alert('이벤트2');
+      // }
+      // btn.onclick = () => {
+      //   doProcess2();
+      // }
+    // document.querySelector("#btn").onclick = function(){
+    //     console.log('click');
+    // }
+  </script>
+</body>
+</html>
