@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event</title>
+  <style>
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid red;
+    }
+
+    #aa {
+      width: 300px;
+      height: 300px;
+      background-color: yellow;
+    }
+
+    #bb {
+      width: 150px;
+      height: 150px;
+      background-color: blue;
+    }
+  </style>
+<body>
+  <div id="aa">
+    aaaaa
+    <div id="bb">bbbb</div>
+    aaaaa
+  </div>
+  <script>
+    const aa = document.querySelector('#aa');
+    const bb = document.querySelector('#bb');
+
+    function aProcess(e){
+      console.log(e.target);
+      e.stopImmediatePropagation();//같은 클릭요소의 동일한 이벤트핸들러가 작동시 나머지는 작동되지않게하는 함수
+      console.log("aa");
+    }
+
+    function aProcess2(e){
+      console.log("aa2");
+    }
+
+    function bProcess(e){
+      e.stopPropagation();// 부모요소에 동일한 이벤트핸들러가 걸려있을때 부모요소로 전달되지않도록하는 함수
+      console.log("bb");
+    }
+
+    aa.addEventListener('click',aProcess,false);
+    aa.addEventListener('click',aProcess2,false);
+    bb.addEventListener('click',bProcess,false);
+
+    // aa.onclick = function(e){
+    //   aProcess();
+    // };
+
+    // bb.onclick = function(e){
+    //   bProcess();
+    // };
+
+    // aa.onmouseover = function(e){
+    //   aProcess();
+    // };
+
+    // bb.onmouseover = function(e){
+    //   bProcess();
+    // };
+
+    // aa.onmouseenter = function(e){
+    //   aProcess();
+    // };
+
+    // bb.onmouseenter = function(e){
+    //   bProcess();
+    // };
+  </script>
+</body>
+</html>
