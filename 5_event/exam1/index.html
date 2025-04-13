@@ -17,11 +17,18 @@
 
     window.onload = function(){
       const btn = document.querySelector("#btn");
-      btn.onclick = () => {
+      //이벤트가 덮어쓰기가 됨
+      // btn.onclick = doProcess2;
+      // btn.onclick = doProcess;
+      // 이벤트 리스너
+      // btn.addEventListener('click',doProcess2, false);
+      // btn.addEventListener('click',doProcess, false);
+      btn.onclick = function(){
+        doProcess();
         doProcess2();
       }
     }
-    
+
     </script>
 <body>
   <div id="result"></div>
