@@ -16,7 +16,7 @@ let iveMem = ['유진','가을','원영','레이','리즈','이서'];
 
 // let iveMem2 = iveMem;
 // iveMem2.push('카리나');
-
+w
 // console.log(iveMem);
 
 
