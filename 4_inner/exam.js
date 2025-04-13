@@ -36,3 +36,18 @@ function sum(a,b,c){
   return a + b + c;
 }
 console.log(sum(...arr));
+
+const objNum = {
+  "username": "박해수",
+  "age": 35,
+  "gender": "남"
+}
+
+// const newObjNum = {...objNum,"age": 40};
+
+function edit(el){
+  console.log('수정 되었습니다');
+  console.log(el);
+}
+
+edit({...objNum,"age": 20})
