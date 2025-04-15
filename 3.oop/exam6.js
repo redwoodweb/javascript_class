@@ -1,4 +1,5 @@
 class Shape {
+  pi = 3.14;
   width;
   height;
   constructor(width, height) {
@@ -25,13 +26,12 @@ class Triangle extends Shape {
   }
 }
 
-class Circle extends Shape {
+class Circle extends Shape {  
   pi = 3.14;
   radius;
   constructor(radius){
     super();//부모요소의 생성자변수를 사용하지않더라도 불러와서 재정의
-    this.radius = radius;
-    // this.pi = this.pi;
+    this.radius = radius;    
   }
   getArea(){
     return this.radius*this.radius*this.pi;
