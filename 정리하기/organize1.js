@@ -45,84 +45,87 @@
 
 // prototype 추가
 
-// function DataProcessing(user, id, pw){
-//     this.user = user;
-//     this.id = id;
-//     this.pw = pw;
-// }
+function DataProcessing(user, id, pw){
+    this.user = user;
+    this.id = id;
+    this.pw = pw;
+}
 
-// DataProcessing.prototype = {
-//     getData: function(){
+DataProcessing.prototype = {
+    getData: function(){
+        return `${this.user}의 사용자 정보를 가져왔습니다.`;
+    },
+    editData: function(){
+        return `${this.user}의 사용자 정보를 수정하였습니다.`;
+    },
+    deleteData: function(){
+        return `${this.user}의 사용자 정보를 삭제하였습니다.`;
+    },
+    print: function(){
+        return `${this.user}의 사용자 정보를 프린트합니다.`;
+    }
+}
+
+function UnMemberDataProcessing(user, id, pw){
+    DataProcessing.call(this, user, id, pw);// 생성자 호출 , property만 상속
+    this.user = 'unmemberenumber';
+}
+
+// property를 제외한 나머지 상속방법
+UnMemberDataProcessing.prototype = Object.create(DataProcessing.prototype);
+UnMemberDataProcessing.prototype.constructor = UnMemberDataProcessing;
+
+
+// class 사용으로 변경
+// class DataProcessing {
+//     constructor(user, id, pw) {
+//         this.user = user;
+//         this.id = id;
+//         this.pw = pw;
+//     };
+//     // 변수에 할당하는 방식은 프로토타입에 등록이 안됨
+//     // getData(){
+//     //     return `${this.user}의 사용자 정보를 가져왔습니다.`;
+//     // };
+//     // editData(){
+//     //     return `${this.user}의 사용자 정보를 수정하였습니다.`;
+//     // };
+//     // deleteData(){
+//     //     return `${this.user}의 사용자 정보를 삭제하였습니다.`;
+//     // }
+//     getData() {
 //         return `${this.user}의 사용자 정보를 가져왔습니다.`;
-//     },
-//     editData: function(){
+//     };
+//     editData() {
 //         return `${this.user}의 사용자 정보를 수정하였습니다.`;
-//     },
-//     deleteData: function(){
+//     };
+//     deleteData() {
 //         return `${this.user}의 사용자 정보를 삭제하였습니다.`;
 //     }
 // }
 
-// function UnMemberDataProcessing(user, id, pw){
-//     DataProcessing.call(this, user, id, pw);// 생성자 호출 , property만 상속
-//     // this.user = 'unmemberenumber';
+
+
+// DataProcessing.prototype.print = function(){//수동으로 등록했기때문에 enumeralble(열거가능한) : true
+//     return `${this.user}의 정보를 출력합니다.`;
 // }
 
-// // property를 제외한 나머지 상속방법
-// UnMemberDataProcessing.prototype = Object.create(DataProcessing.prototype);
-// UnMemberDataProcessing.prototype.constructor = UnMemberDataProcessing;
-
-
-// class 사용으로 변경
-class DataProcessing {
-    constructor(user, id, pw) {
-        this.user = user;
-        this.id = id;
-        this.pw = pw;
-    };
-    // 변수에 할당하는 방식은 프로토타입에 등록이 안됨
-    // getData(){
-    //     return `${this.user}의 사용자 정보를 가져왔습니다.`;
-    // };
-    // editData(){
-    //     return `${this.user}의 사용자 정보를 수정하였습니다.`;
-    // };
-    // deleteData(){
-    //     return `${this.user}의 사용자 정보를 삭제하였습니다.`;
-    // }
-    getData() {
-        return `${this.user}의 사용자 정보를 가져왔습니다.`;
-    };
-    editData() {
-        return `${this.user}의 사용자 정보를 수정하였습니다.`;
-    };
-    deleteData() {
-        return `${this.user}의 사용자 정보를 삭제하였습니다.`;
-    }
-}
-
-
-
-DataProcessing.prototype.print = function(){//수동으로 등록했기때문에 enumeralble(열거가능한) : true
-    return `${this.user}의 정보를 출력합니다.`;
-}
-
 // console.log(Object.getPrototypeOf(DataProcessing) === DataProcessing.__proto__);
-console.log(DataProcessing.prototype.getData);// class 문법으로 등록했기때문에 enumeralble(열거가능한) : false
-console.log(DataProcessing.prototype.editData);
-console.log(DataProcessing.prototype.deleteData);
-console.log(DataProcessing.prototype);
-console.log(Object.getOwnPropertyNames(DataProcessing.prototype));// enumerable과 상관없이 모두 출력을 원하면 왼쪽과 같이 출력하면 된다.
+// console.log(DataProcessing.prototype.getData);// class 문법으로 등록했기때문에 enumeralble(열거가능한) : false
+// console.log(DataProcessing.prototype.editData);
+// console.log(DataProcessing.prototype.deleteData);
+// console.log(DataProcessing.prototype);
+// console.log(Object.getOwnPropertyNames(DataProcessing.prototype));// enumerable과 상관없이 모두 출력을 원하면 왼쪽과 같이 출력하면 된다.
 
 //console.log는 열거가능한 속성만 보여주기때문에 enumerable 값이 true인 속성만 출력한다.
 
 
-class UnMemberDataProcessing extends DataProcessing {
-    constructor(user, id, pw) {
-        super(user, id, pw);
-        this.user = 'unmember number';       
-    };
-}
+// class UnMemberDataProcessing extends DataProcessing {
+//     constructor(user, id, pw) {
+//         super(user, id, pw);
+//         this.user = 'unmember number';       
+//     };
+// }
 
 
 let user = [];
