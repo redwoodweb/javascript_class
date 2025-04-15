@@ -18,6 +18,7 @@ console.log('test');
 //문자열 => nuber: eval(), Number():NaN, parseInt():변환할수있는부분만만, parseFloat()
 
 let num = '100test';
+num = parseInt(num);
 num = num + 100;
 console.log(num);
 

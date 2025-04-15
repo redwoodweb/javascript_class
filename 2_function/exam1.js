@@ -35,7 +35,7 @@
 
 // 내가 테스트 해본것
 // const testFunc = () => {
-//   return ();
+//   return ('test');
 // }
 // console.log(testFunc());
 
@@ -97,22 +97,22 @@
 // console.log(objTestPlus(20,30));
 // console.log(objTestMinus(50,30));
 
-function Call(mode){
-  let obj =  {
-    'plus': function(a, b){
-      return a + b;
-    },
-    'minus': function(a, b){
-      return a - b;
-    }
-  }
-  return obj[mode];
-}
+// function Call(mode){
+//   let obj =  {
+//     'plus': function(a, b){
+//       return a + b;
+//     },
+//     'minus': function(a, b){
+//       return a - b;
+//     }
+//   }
+//   return obj[mode];
+// }
 
-const objTestPlus = new Call('plus');
-const objTestMinus = new Call('minus');
-console.log(objTestPlus(20,30));
-console.log(objTestMinus(50,30));
+// const objTestPlus = new Call('plus');
+// const objTestMinus = new Call('minus');
+// console.log(objTestPlus(20,30));
+// console.log(objTestMinus(50,30));
 
 
 // let func = call('plus');
@@ -137,3 +137,21 @@ console.log(objTestMinus(50,30));
 // (function(a,b){
 //   console.log(a+b);
 // })(2,3);
+
+
+// function outFunc(){
+//   let arrayNum = ['a','b','c','d'];
+//   let elNum = '';
+//   for (let index = 0; index < arrayNum.length; index++) {
+//     elNum += arrayNum[index];
+//   }
+//   function innerFunc(el){
+//     return 'this is inner function'+el;
+//   }
+//   return innerFunc(elNum);
+// }
+
+// console.log(outFunc());
+
+
+
