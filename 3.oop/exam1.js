@@ -79,3 +79,8 @@ let person = {
 
 let {first, last} = person;
 console.log(first,last);
+
+let personArray = ['홍','길','동'];
+
+let [firstVal, secondVal, thirdVal] = personArray;
+console.log(firstVal,secondVal,thirdVal);
