@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 도형 그리기</title>
+    <style>
+        canvas {
+            border: 1px solid #333;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>🎨 Canvas 도형 그리기 예제</h2>
+    <canvas id="myCanvas" width="500" height="300"></canvas><br>
+    <button onclick="drawRectangle()">사각형 그리기</button>
+    <button onclick="drawCircle()">원 그리기</button>
+
+    <script>
+        // 기본 도형 클래스
+        class Shape {
+            constructor(ctx, x, y, color = 'black') {
+                this.ctx = ctx;
+                this.x = x;
+                this.y = y;
+                this.color = color;
+            }
+
+            setFillStyle() {
+                this.ctx.fillStyle = this.color;
+            }
+        }
+
+        // 사각형 클래스
+        class Rectangle extends Shape {
+            constructor(ctx, x, y, width, height, color) {
+                super(ctx, x, y, color);
+                this.width = width;
+                this.height = height;
+            }
+
+            setFillStyle() { }
+            draw() {
+                this.setFillStyle();
+                this.ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
+        }
+
+        console.log(Object.getOwnPropertyNames(Rectangle.prototype));
+
+
+        // 원 클래스
+        class Circle extends Shape {
+            constructor(ctx, x, y, radius, color) {
+                super(ctx, x, y, color);
+                this.radius = radius;
+            }
+
+            draw() {
+                this.setFillStyle();
+                this.ctx.beginPath();
+                this.ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                this.ctx.fill();
+            }
+        }
+
+        // Canvas 컨텍스트 가져오기
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // 버튼 클릭 시 실행되는 함수들
+        function drawRectangle() {
+            const rect = new Rectangle(ctx, 50, 50, 150, 80, 'skyblue');
+            rect.draw();
+        }
+
+        function drawCircle() {
+            const circle = new Circle(ctx, 300, 150, 50, 'orange');
+            circle.draw();
+        }
+    </script>
+</body>
+
+</html>
